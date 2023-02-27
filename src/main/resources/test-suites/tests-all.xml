@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Apollo Mobile UI"
+       configfailurepolicy="continue"
+       verbose="3"
+       allow-return-values="true">
+
+    <test name="Regression"
+          enabled="true"
+          preserve-order="false">
+        <classes>
+
+            <class name="tests.supplierpro.EmailNotificationForAwaitingOrderTest"/>
+            <class name="tests.supplierpro.SupplierProAutoOrderCardViewDeliveredTest"/>
+            <class name="tests.supplierpro.SupplierProAutoOrderCardViewShippedTest"/>
+            <class name="tests.supplierpro.SupplierProAutoOrderGridViewDeliveredTest"/>
+            <class name="tests.supplierpro.SupplierProAutoOrderGridViewShippedTest"/>
+            <class name="tests.supplierpro.SupplierProAutoOrdersMissingInfoInstantlyTest"/>
+            <class name="tests.supplierpro.SupplierProAutoOrdersPastDueInstantlyTest"/>
+            <class name="tests.supplierpro.SupplierProAutoOrdersPastDueNextDayTest"/>
+            <class name="tests.supplierpro.SupplierProAutoOrdersBackOrderReviewCriticalBadgeTest"/>
+            <class name="tests.supplierpro.SupplierProAutoOrdersMissingInfoCriticalInstantlyTest"/>
+            <class name="tests.supplierpro.SupplierProAutoOrdersBackOrderTest"/>
+            <class name="tests.supplierpro.SupplierProAutoOrdersBackOrderReviewBadgeTest"/>
+            <class name="tests.supplierpro.SupplierProAutoOrdersPastDueCriticalNextDayTest"/>
+            <class name="tests.supplierpro.SupplierProUserImpersonationTest"/>
+            <class name="tests.supplierpro.SupplierProUserLoginTest"/>
+            <class name="tests.supplierpro.SupplierProMyProfileTest"/>
+            <class name="tests.supplierpro.SupplierProShippingAndReturnsTest"/>
+            <class name="tests.supplierpro.SupplierProFeesAndPaymentsTest"/>
+            <class name="tests.supplierpro.SupplierProGeneralInformationTest"/>
+            <class name="tests.supplierpro.SupplierProRegistrationCompleteTest"/>
+            <class name="tests.supplierpro.SupplierProServicesAndInventoryTest"/>
+            <class name="tests.supplierpro.SupplierProViewAllOrdersTest"/>
+            <class name="tests.supplierpro.SupplierProViewAllOrdersFilterVendorPartNumberTest"/>
+            <class name="tests.supplierpro.SupplierProViewAllOrdersFilterVendorOrderNumberTest"/>
+            <class name="tests.supplierpro.SupplierProViewAllOrdersFilterTrackingNumberTest"/>
+            <class name="tests.supplierpro.SupplierProViewAllOrdersFilterRefNumberTest"/>
+            <class name="tests.supplierpro.SupplierProViewAllOrdersFilterPONumberTest"/>
+            <class name="tests.supplierpro.SupplierProViewAllOrdersFilterOrigReferenceTest"/>
+            <class name="tests.supplierpro.SupplierProViewAllOrdersFilterOrderNumberTest"/>
+            <class name="tests.supplierpro.SupplierProViewAllOrdersFilterModelTest"/>
+            <class name="tests.supplierpro.SupplierProViewAllOrdersFilterBillingPONumberTest"/>
+            <class name="tests.supplierpro.SupplierProViewAllOrdersFilterOrderStatusTest"/>
+            <class name="tests.supplierpro.SupplierProViewAllOrdersFilterStatusTest"/>
+            <class name="tests.supplierpro.SupplierProViewAllOrdersFilterOrderTypeTest"/>
+            <class name="tests.supplierpro.SupplierProViewAllOrdersFilterItemReceivedTest"/>
+            <class name="tests.supplierpro.SupplierProViewAllOrdersFilterManufacturerTest"/>
+            <class name="tests.supplierpro.SupplierProDefaultLandingPageTest"/>
+            <class name="tests.supplierpro.SupplierProVDFTabTest"/>
+            <class name="tests.supplierpro.SupplierProExchange2PendingTabCardAndDetailViewRMANotRequiredTest"/>
+            <class name="tests.supplierpro.SupplierProAdminSettingsTest"/>
+            <class name="tests.supplierpro.SupplierProBidsMyBidsCardViewTest"/>
+            <class name="tests.supplierpro.SupplierProBidsGridViewMyBidsAndOpenBidsTest"/>
+            <class name="tests.supplierpro.SupplierProBidsWithMultipleConditionsGridViewTest"/>
+            <class name="tests.supplierpro.SupplierProBidsNOBIDConditionRepairTest"/>
+            <class name="tests.supplierpro.SupplierProExchange5InspectedCardDetailAndModalPassInspectionManuallyRcvdTest"/>
+            <class name="tests.supplierpro.SupplierProBidsMyBidsQuotedRepairW_LoanerTest"/>
+            <class name="tests.supplierpro.SupplierProBidsRepairMultipleBidsTest"/>
+            <class name="tests.supplierpro.SupplierProBidsOpenBidsCriticalHardDownGridAndCardViewTest"/>
+            <class name="tests.supplierpro.SupplierProBidsSODEXOLoanersCancellationFeeCostTest"/>
+            <class name="tests.supplierpro.SupplierProBidsNoMultipleConditionsForREPAIRTest"/>
+            <class name="tests.supplierpro.SupplierProBidsOpenBidsCardViewRepairTest"/>
+            <class name="tests.supplierpro.SupplierProRepairs0RMATabCardAndDetailPageFlatTest"/>
+            <class name="tests.supplierpro.SupplierProRepairs0RMATabPartWithSpecialCharactersTest"/>
+            <class name="tests.supplierpro.SupplierProRepairs0RMATabCriticalHardDownTest"/>
+            <class name="tests.supplierpro.SupplierProMyAccountDefaultLandingPageTest"/>
+            <class name="tests.supplierpro.SupplierProUnauthorizedURLAccessMultipleCompaniesTest"/>
+            <class name="tests.supplierpro.SupplierProSisenseDashboardsMultipleCompaniesTest"/>
+            <class name="tests.supplierpro.SupplierProUnauthorizedURLNotificationTest"/>
+            <class name="tests.supplierpro.SupplierProImpersonateNonPSComUserTest"/>
+            <class name="tests.supplierpro.SupplierProNavBarDashboardsSisenseBloomreachAndResourcesTest"/>
+            <class name="tests.supplierpro.SupplierProManagementConsoleSiteSettingsTest"/>
+            <class name="tests.supplierpro.SupplierProExchangesAndReturnsFilterTest"/>
+            <class name="tests.supplierpro.SupplierProOrders1AwaitingReviewVendorNumberValidationTest"/>
+            <class name="tests.supplierpro.SupplierProOrdersAllOrdersCompanyTest"/>
+            <class name="tests.supplierpro.SupplierProOrdersAllOrdersBackorderedTest"/>
+            <class name="tests.supplierpro.SupplierProOrdersAllOrdersConditionTest"/>
+            <class name="tests.supplierpro.SupplierProOrdersAllOrdersRepairTest"/>
+            <class name="tests.supplierpro.SupplierProOrdersAllOrdersOrderDateTest"/>
+            <class name="tests.supplierpro.SupplierProOrdersAllOrdersMultipleFilterSelectionTest"/>
+
+        </classes>
+    </test>
+</suite>

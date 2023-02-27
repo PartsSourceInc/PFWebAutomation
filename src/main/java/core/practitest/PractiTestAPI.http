@@ -1,0 +1,178 @@
+# PractiTest API examples. IntelliJ can execute these individually. Useful for debugging.
+
+### GET all custom fields
+GET https://api.practitest.com/api/v2/projects/8289/custom_fields.json
+Content-Type: application/json
+Authorization: Basic {bWthbGlub3ZAcGFydHNzb3VyY2UuY29tOjhhZTc0ZTlmZTkzMmY1Y2M2ODAyZWNmZjVmNWQ5YWEyMzVhZWNjN2Y=}
+
+### Get all tests of project #4566, where filter-id is 485047
+GET https://api.practitest.com/api/v2/projects/8289/tests.json?filter-id=485047&page[number]=1&page[size]=100
+Content-Type: application/json
+Authorization: Basic {bWthbGlub3ZAcGFydHNzb3VyY2UuY29tOjhhZTc0ZTlmZTkzMmY1Y2M2ODAyZWNmZjVmNWQ5YWEyMzVhZWNjN2Y=}
+
+### (Set Filter ID) -> (List<TestSet Instance Id>)
+GET https://api.practitest.com/api/v2/projects/8289/instances.json?set-filter-id=1139374
+Authorization: Basic {bWthbGlub3ZAcGFydHNzb3VyY2UuY29tOjhhZTc0ZTlmZTkzMmY1Y2M2ODAyZWNmZjVmNWQ5YWEyMzVhZWNjN2Y=}
+
+### (Test Set ID) -> (List<TestSet Instance Id>)
+GET https://api.practitest.com/api/v2/projects/8289/instances.json?set-ids=904193
+Authorization: Basic {bWthbGlub3ZAcGFydHNzb3VyY2UuY29tOjhhZTc0ZTlmZTkzMmY1Y2M2ODAyZWNmZjVmNWQ5YWEyMzVhZWNjN2Y=}
+
+### (Test Display ID) -> (Test ID)
+GET https://api.practitest.com/api/v2/projects/8289/tests.json?display-ids=2319,2296,2218,2205,2379,2477,2198,2342,2196,2197
+Authorization: Basic {bWthbGlub3ZAcGFydHNzb3VyY2UuY29tOjhhZTc0ZTlmZTkzMmY1Y2M2ODAyZWNmZjVmNWQ5YWEyMzVhZWNjN2Y=}
+
+### (Test Display ID) -> (Test ID)
+GET https://api.practitest.com/api/v2/projects/8289/tests.json?display-ids=2476
+Authorization: Basic {bWthbGlub3ZAcGFydHNzb3VyY2UuY29tOjhhZTc0ZTlmZTkzMmY1Y2M2ODAyZWNmZjVmNWQ5YWEyMzVhZWNjN2Y=}
+
+### (Test ID) -> (List<Test Step>)
+GET https://api.practitest.com/api/v2/projects/8289/steps.json?test-ids=5040182
+Authorization: Basic {bWthbGlub3ZAcGFydHNzb3VyY2UuY29tOjhhZTc0ZTlmZTkzMmY1Y2M2ODAyZWNmZjVmNWQ5YWEyMzVhZWNjN2Y=}
+
+### (Test ID) -> (Test Data)
+GET https://api.practitest.com/api/v2/projects/8289/tests/3038084.json
+Authorization: Basic {bWthbGlub3ZAcGFydHNzb3VyY2UuY29tOjhhZTc0ZTlmZTkzMmY1Y2M2ODAyZWNmZjVmNWQ5YWEyMzVhZWNjN2Y=}
+
+> {% client.log(response.body.data.attributes.preconditions); %}
+
+### (Test ID) -> (Test run)
+GET https://api.practitest.com/api/v2/projects/8289/runs.json?test-ids=3705253
+Authorization: Basic {bWthbGlub3ZAcGFydHNzb3VyY2UuY29tOjhhZTc0ZTlmZTkzMmY1Y2M2ODAyZWNmZjVmNWQ5YWEyMzVhZWNjN2Y=}
+
+### (Test Instance ID) -> (Test run)
+GET https://api.practitest.com/api/v2/projects/8289/runs.json?instance-ids=28349318
+Authorization: Basic {bWthbGlub3ZAcGFydHNzb3VyY2UuY29tOjhhZTc0ZTlmZTkzMmY1Y2M2ODAyZWNmZjVmNWQ5YWEyMzVhZWNjN2Y=}
+
+### (Instance ID,<List<Steps>) -> (Test run)
+POST https://api.practitest.com/api/v2/projects/8289/runs.json
+Authorization: Basic {bWthbGlub3ZAcGFydHNzb3VyY2UuY29tOjhhZTc0ZTlmZTkzMmY1Y2M2ODAyZWNmZjVmNWQ5YWEyMzVhZWNjN2Y=}
+Content-Type: application/json
+
+{
+  "data" : {
+    "type" : "instances",
+    "attributes" : {
+      "instance-id" : 29517944,
+      "automated-execution-output" : "ExecutionOutput: Ref# 4578090",
+      "run-duration" : "00:00:38"
+    },
+    "steps" : {
+      "data" : [ {
+        "name" : "Open Apollo and Sign In with User 151822 and password 123 and clear cart.",
+        "description": "DETAILS...",
+        "status" : "PASSED"
+      }, {
+        "name" : "Navigate to Home Page",
+        "status" : "PASSED"
+      }, {
+        "name" : "Attempt to Sign In with User 151822 and password 123.",
+        "status" : "PASSED"
+      }, {
+        "name" : "Clear Cart if not empty.",
+        "status" : "PASSED"
+      }, {
+        "name" : "Navigate to PDP",
+        "status" : "PASSED",
+        "files" : {
+          "data" : [ {
+            "filename" : "pdp_url.txt",
+            "content_encoded" : "M20taGVhbHRoY2FyZS1mb3JtZXJseS1hcml6YW50LWhlYWx0aGNhcmUtaW5jLzIyMTEwL1BTMzhR\r\nRUpYVkE5"
+          } ]
+        }
+      }, {
+        "name" : "Click Add to Cart button",
+        "status" : "PASSED"
+      }, {
+        "name" : "Wait until page loaded",
+        "status" : "PASSED"
+      }, {
+        "name" : "Click View Cart on Modal",
+        "status" : "PASSED"
+      }, {
+        "name" : "Click Proceed to Checkout button",
+        "status" : "PASSED",
+        "files" : {
+          "data" : [ {
+            "filename" : "cartProductRefs.txt",
+            "content_encoded" : "NDU3ODA5MA=="
+          } ]
+        }
+      }, {
+        "name" : "Complete Checkout with PO number: 570125",
+        "status" : "PASSED"
+      }, {
+        "name" : "Click Continue button",
+        "status" : "PASSED"
+      }, {
+        "name" : "Unselect Shipping Insurance option",
+        "status" : "PASSED"
+      }, {
+        "name" : "Verify shipping subtotal equals: $0.00",
+        "status" : "PASSED"
+      }, {
+        "name" : "Deselect GSA option",
+        "status" : "PASSED"
+      }, {
+        "name" : "Verify shipping subtotal is more than 0",
+        "status" : "PASSED"
+      }, {
+        "name" : "Select GSA option",
+        "status" : "PASSED"
+      }, {
+        "name" : "Verify shipping subtotal equals: $0.00",
+        "status" : "PASSED"
+      }, {
+        "name" : "Click Shipping Method Continue button",
+        "status" : "PASSED"
+      }, {
+        "name" : "Click Payment Continue button",
+        "status" : "PASSED"
+      }, {
+        "name" : "Click Place Purchase button",
+        "status" : "PASSED"
+      }, {
+        "name" : "Verify successful order message",
+        "status" : "PASSED",
+        "files" : {
+          "data" : [ {
+            "filename" : "purchase_order_number.txt",
+            "content_encoded" : "MzUxNjY3MQ=="
+          } ]
+        }
+      }, {
+        "name" : "Verify order summary PO number is: '570125'",
+        "status" : "PASSED"
+      }, {
+        "name" : "Verify Order summary carrier is: FedEx",
+        "status" : "PASSED"
+      }, {
+        "name" : "Verify order summary shipping method is: FedEx Ground®",
+        "status" : "PASSED"
+      }, {
+        "name" : "Verify order summary shipping fee is: $0.00",
+        "status" : "PASSED"
+      } ]
+    }
+  }
+}
+
+### (Test Set ID,Test ID) -> (Test Instance ID)
+POST https://api.practitest.com/api/v2/projects/8289/instances.json
+Authorization: Basic {bWthbGlub3ZAcGFydHNzb3VyY2UuY29tOjhhZTc0ZTlmZTkzMmY1Y2M2ODAyZWNmZjVmNWQ5YWEyMzVhZWNjN2Y=}
+Content-Type: application/json
+
+{
+    "data": {
+        "type": "instances",
+        "attributes": {
+            "test-id": 2944728,
+            "set-id": 898436
+        }
+    }
+}
+
+
+### (TestSet Instance ID) -> (TestSet Instance Details)
+GET https://api.practitest.com/api/v2/projects/8289/instances/23817038.json
+Authorization: Basic {bWthbGlub3ZAcGFydHNzb3VyY2UuY29tOjhhZTc0ZTlmZTkzMmY1Y2M2ODAyZWNmZjVmNWQ5YWEyMzVhZWNjN2Y=}

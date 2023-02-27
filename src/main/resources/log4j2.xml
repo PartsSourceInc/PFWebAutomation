@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+    <Appenders>
+        <Console name="CONSOLE_OUTPUT" target="SYSTEM_OUT">
+            <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+            <PatternLayout pattern="[%d{yy-MM-dd HH:mm:ss}] - %p - %C{1} - %m%n"/>
+        </Console>
+        <File
+                name="FILE_OUTPUT"
+                fileName="target/full-log.log">
+            <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+            <PatternLayout pattern="[%d{yy-MM-dd HH:mm:ss}] - %p - %C{1} - %m%n"/>
+            <param name="Append" value="false"/>
+            <param name="immediateFlush" value="false"/>
+            <param name="ignoreExceptions" value="false"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="error">
+            <AppenderRef ref="CONSOLE_OUTPUT"/>
+        </Root>
+        <Logger name="core" level="all" additivity="false" >
+            <AppenderRef ref="FILE_OUTPUT"/>
+            <AppenderRef ref="CONSOLE_OUTPUT"/>
+        </Logger>
+    </Loggers>
+</Configuration>
